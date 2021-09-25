@@ -2,12 +2,12 @@ import requests
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
-# Standardizes currency to USD values so that we can better compare results
+
 
 def format_currency(dataset):
   url = "https://api.exchangerate-api.com/v4/latest/USD"
 
-  # Requests data from API
+
   response = requests.get(url)
   data = response.json()
   
@@ -21,7 +21,7 @@ def format_currency(dataset):
   return dataset
 
 
-# ADD CODE: Pandas dataframes
+
 
 wage = pd.read_csv("wage.csv", delimiter=",")
 happiness = pd.read_csv("happiness.csv", delimiter=",")
@@ -41,3 +41,5 @@ plt.ylabel("Level of Happiness")
 fig.set_facecolor("#E5E5E5")
 plt.legend(loc="lower right")
 plt.savefig("salary_and_happiness.png")
+
+
